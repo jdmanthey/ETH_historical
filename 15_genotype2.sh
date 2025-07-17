@@ -1,0 +1,53 @@
+#!/bin/bash
+#SBATCH --chdir=./
+#SBATCH --job-name=genotype
+#SBATCH --partition nocona
+#SBATCH --nodes=1 --ntasks=4
+#SBATCH --time=48:00:00
+#SBATCH --mem-per-cpu=8G
+#SBATCH --array=1-108
+
+source activate bcftools
+
+# define main working directory
+workdir=/lustre/scratch/jmanthey/04_ethiopia_historical
+
+basename_array=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/basenames.txt | tail -n1 )
+
+# define the reference genome
+refgenome=/home/jmanthey/references/Ficedula_albicollis.FicAlb1.5.dna.toplevel.fa
+
+# run bcftools to genotype
+bcftools mpileup --skip-indels -C 0 -d 200 --min-MQ 10 --threads 4 \
+-f ${refgenome} ${workdir}/01b_bam_files/${basename_array}_final.bam | bcftools \
+call -m --threads 4 -o ${workdir}/02b_vcf/${basename_array}.vcf
+
+bcftools mpileup --skip-indels -C 0 -d 200 --min-MQ 10 --threads 4 \
+-f ${refgenome} ${workdir}/01c_bam_files/${basename_array}_final.bam | bcftools \
+call -m --threads 4 -o ${workdir}/02c_vcf/${basename_array}.vcf
+
+# bgzip
+bgzip ${workdir}/02b_vcf/${basename_array}.vcf
+
+bgzip ${workdir}/02c_vcf/${basename_array}.vcf
+
+#tabix
+tabix ${workdir}/02b_vcf/${basename_array}.vcf.gz
+
+tabix ${workdir}/02c_vcf/${basename_array}.vcf.gz
+
+# filter individual vcf files
+bcftools view -i 'MIN(DP)>7' ${workdir}/02b_vcf/${basename_array}.vcf.gz > ${workdir}/03b_vcf/${basename_array}.vcf
+
+bcftools view -i 'MIN(DP)>7' ${workdir}/02c_vcf/${basename_array}.vcf.gz > ${workdir}/03c_vcf/${basename_array}.vcf
+
+# bgzip
+bgzip ${workdir}/03b_vcf/${basename_array}.vcf
+
+bgzip ${workdir}/03c_vcf/${basename_array}.vcf
+
+#tabix
+tabix ${workdir}/03b_vcf/${basename_array}.vcf.gz
+
+tabix ${workdir}/03c_vcf/${basename_array}.vcf.gz
+
