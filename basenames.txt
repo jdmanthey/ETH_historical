@@ -20,7 +20,6 @@ Crithagra_striolata__83949_
 Crithagra_striolata__83950_
 Crithagra_striolata__83951_
 Crithagra_striolata__EB020_
-Crithagra_striolata__EB021_
 Crithagra_striolata__EB071_
 Crithagra_striolata__EB080_
 Crithagra_striolata__EB083_
@@ -61,7 +60,6 @@ Nectarinia_tacazze__83653_
 Nectarinia_tacazze__83656_
 Nectarinia_tacazze__83658_
 Nectarinia_tacazze__EB005_
-Nectarinia_tacazze__EB018_
 Nectarinia_tacazze__EB029_
 Nectarinia_tacazze__EB072_
 Nectarinia_tacazze__EB074_
