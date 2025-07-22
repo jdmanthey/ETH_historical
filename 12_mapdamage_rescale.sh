@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 --ntasks=8
 #SBATCH --time=48:00:00
 #SBATCH --mem-per-cpu=8G
-#SBATCH --array=1-108
+#SBATCH --array=1-106
 
 # define main working directory
 workdir=/lustre/scratch/jmanthey/04_ethiopia_historical
