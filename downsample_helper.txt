@@ -20,7 +20,6 @@ Crithagra_striolata__83949_	6715283157	1
 Crithagra_striolata__83950_	11024487616	0.69
 Crithagra_striolata__83951_	9152768413	0.83
 Crithagra_striolata__EB020_	22255586538	0.34
-Crithagra_striolata__EB021_	15029935763	0.5
 Crithagra_striolata__EB071_	13610661855	0.56
 Crithagra_striolata__EB080_	13100148028	0.58
 Crithagra_striolata__EB083_	11486086948	0.66
@@ -61,7 +60,6 @@ Nectarinia_tacazze__83653_	22480642635	0.34
 Nectarinia_tacazze__83656_	13739228915	0.55
 Nectarinia_tacazze__83658_	12593391072	0.6
 Nectarinia_tacazze__EB005_	30443781224	0.25
-Nectarinia_tacazze__EB018_	16501036550	0.46
 Nectarinia_tacazze__EB029_	20437854567	0.37
 Nectarinia_tacazze__EB072_	14226652252	0.53
 Nectarinia_tacazze__EB074_	21030459472	0.36
