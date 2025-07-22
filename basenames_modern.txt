@@ -7,7 +7,6 @@ Cossypha_semirufa__EB069_
 Cossypha_semirufa__EB085_
 Cossypha_semirufa__EB087_
 Crithagra_striolata__EB020_
-Crithagra_striolata__EB021_
 Crithagra_striolata__EB071_
 Crithagra_striolata__EB080_
 Crithagra_striolata__EB083_
@@ -27,7 +26,6 @@ Melaenornis_chocolatinus__EB063_
 Melaenornis_chocolatinus__EB067_
 Melaenornis_chocolatinus__EB084_
 Nectarinia_tacazze__EB005_
-Nectarinia_tacazze__EB018_
 Nectarinia_tacazze__EB029_
 Nectarinia_tacazze__EB072_
 Nectarinia_tacazze__EB074_
