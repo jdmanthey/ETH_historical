@@ -31,6 +31,10 @@ mkdir 07_transversions
 mkdir 07b_transversions
 mkdir 07c_transversions
 
+mkdir 08_load
+mkdir 08b_load
+mkdir 08c_load
+
 mkdir 20_combine_lanes
 mkdir 21_split_h_script
 mkdir 22_dedup_h_script
