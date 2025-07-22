@@ -25,7 +25,7 @@ vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep cossypha.txt \
 --out ${workdir}/06_stats/cossypha_het_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep cristrio.txt \
---max-missing 0.83 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.81 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/06_stats/cristrio_het_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep critrist.txt \
@@ -37,7 +37,7 @@ vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep melaenornis.txt \
 --out ${workdir}/06_stats/melaenornis_het_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep nectarinia.txt \
---max-missing 0.85 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.84 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/06_stats/nectarinia_het_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep sylvia.txt \
@@ -51,4 +51,3 @@ vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep turdus.txt \
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep zosterops.txt \
 --max-missing 0.85 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/06_stats/zosterops_het_${region_array}
-
