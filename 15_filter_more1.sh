@@ -52,35 +52,35 @@ vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep zosterops.txt \
 
 # max missing = two individuals for load; only biallelic sites
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep cossypha.txt \
---max-missing 0.85 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.85 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/cossypha_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep cristrio.txt \
---max-missing 0.81 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.81 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/cristrio_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep critrist.txt \
---max-missing 0.87 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.87 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/critrist_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep melaenornis.txt \
---max-missing 0.83 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.83 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/melaenornis_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep nectarinia.txt \
---max-missing 0.84 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.84 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/nectarinia_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep sylvia.txt \
---max-missing 0.80 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.80 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/sylvia_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep turdus.txt \
---max-missing 0.87 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.87 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/turdus_load_${region_array}
 
 vcftools --vcf ${workdir}/04_vcf/${region_array}.vcf --keep zosterops.txt \
---max-missing 0.85 --min-alleles 2 --max-alleles 2 --max-maf 0.49 --recode --recode-INFO-all \
+--max-missing 0.85 --min-alleles 2 --max-alleles 2 --mac 1 --max-maf 0.49 --recode --recode-INFO-all \
 --out ${workdir}/08_load/zosterops_load_${region_array}
 
 # copy load files for transversions conversion in transversions directory
@@ -105,13 +105,68 @@ cp ${workdir}/08_load/zosterops_load_${region_array}.recode.vcf ${workdir}/07_tr
 grep "^#" ${workdir}/07_transversions/cossypha_${region_array}.recode.vcf > \
 ${workdir}/07_transversions/cossypha_${region_array}.subset.vcf
 
+grep "^#" ${workdir}/07_transversions/cristrio_${region_array}.recode.vcf > \
+${workdir}/07_transversions/cristrio_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/critrist_${region_array}.recode.vcf > \
+${workdir}/07_transversions/critrist_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/melaenornis_${region_array}.recode.vcf > \
+${workdir}/07_transversions/melaenornis_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/nectarinia_${region_array}.recode.vcf > \
+${workdir}/07_transversions/nectarinia_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/sylvia_${region_array}.recode.vcf > \
+${workdir}/07_transversions/sylvia_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/turdus_${region_array}.recode.vcf > \
+${workdir}/07_transversions/turdus_${region_array}.subset.vcf
+
+grep "^#" ${workdir}/07_transversions/zosterops_${region_array}.recode.vcf > \
+${workdir}/07_transversions/zosterops_${region_array}.subset.vcf
+
 # extract transversions
 Rscript _extract_transversions.r ${workdir}/07_transversions/cossypha_${region_array}.recode.vcf \
 ${workdir}/07_transversions/cossypha_${region_array}.subset.vcf
 
+Rscript _extract_transversions.r ${workdir}/07_transversions/cristrio_${region_array}.recode.vcf \
+${workdir}/07_transversions/cristrio_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/critrist_${region_array}.recode.vcf \
+${workdir}/07_transversions/critrist_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/melaenornis_${region_array}.recode.vcf \
+${workdir}/07_transversions/melaenornis_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/nectarinia_${region_array}.recode.vcf \
+${workdir}/07_transversions/nectarinia_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/sylvia_${region_array}.recode.vcf \
+${workdir}/07_transversions/sylvia_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/turdus_${region_array}.recode.vcf \
+${workdir}/07_transversions/turdus_${region_array}.subset.vcf
+
+Rscript _extract_transversions.r ${workdir}/07_transversions/zosterops_${region_array}.recode.vcf \
+${workdir}/07_transversions/zosterops_${region_array}.subset.vcf
+
 # remove intermediate unneeded vcfs 
 rm ${workdir}/07_transversions/cossypha_${region_array}.recode.vcf
 
+rm ${workdir}/07_transversions/cristrio_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/critrist_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/melaenornis_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/nectarinia_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/sylvia_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/turdus_${region_array}.recode.vcf
+
+rm ${workdir}/07_transversions/zosterops_${region_array}.recode.vcf
 
 
 
