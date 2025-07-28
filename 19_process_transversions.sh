@@ -48,21 +48,21 @@ for i in $( ls zosterops_*.subset.vcf ); do grep -v "^#" $i >> zosterops.vcf; do
 
 # filter for genetic distances
 
-vcftools --vcf cossypha.vcf --thin 5000 --recode --recode-INFO-all --out cossypha
+vcftools --vcf cossypha.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out cossypha
 
-vcftools --vcf cristrio.vcf --thin 5000 --recode --recode-INFO-all --out cristrio
+vcftools --vcf cristrio.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out cristrio
 
-vcftools --vcf critrist.vcf --thin 5000 --recode --recode-INFO-all --out critrist
+vcftools --vcf critrist.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out critrist
 
-vcftools --vcf melaenornis.vcf --thin 5000 --recode --recode-INFO-all --out melaenornis
+vcftools --vcf melaenornis.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out melaenornis
 
-vcftools --vcf nectarinia.vcf --thin 5000 --recode --recode-INFO-all --out nectarinia
+vcftools --vcf nectarinia.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out nectarinia
 
-vcftools --vcf sylvia.vcf --thin 5000 --recode --recode-INFO-all --out sylvia
+vcftools --vcf sylvia.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out sylvia
 
-vcftools --vcf turdus.vcf --thin 5000 --recode --recode-INFO-all --out turdus
+vcftools --vcf turdus.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out turdus
 
-vcftools --vcf zosterops.vcf --thin 5000 --recode --recode-INFO-all --out zosterops
+vcftools --vcf zosterops.vcf --thin 5000 --max-missing 1.00 --recode --recode-INFO-all --out zosterops
 
 
 # remove individual scaffolds
