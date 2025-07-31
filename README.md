@@ -1,10 +1,5 @@
 # ETH_historical
-shifts in diversity and differentiation through time in several Ethiopian highland bird species
-
-# ethiopia_historical
-
 Collection of scripts to analyze a set of historical and modern genomic sequencing datasets from eight species of Ethiopian highland birds. 
-
 
 00_setup.sh – Reference genome info, indexing the reference, and setting up directory structure.
 
