@@ -55,4 +55,6 @@ Collection of scripts to analyze a set of historical and modern genomic sequenci
 
 23_coverage.sh – estimate coverage in all samples.
 
+24_rohan.sh - estimate runs of homozygosity.
+
 All other, non-numbered files are helper files in functions used in above scripts.
